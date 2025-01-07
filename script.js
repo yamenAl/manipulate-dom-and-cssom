@@ -75,6 +75,19 @@ function saveEmojiList() {
 
 function surpriseMe() {
   console.log('Surpise me 🎉')
+  console.log(emojiPool)
+  //const allEmoji = emojiPool;
+  // create new element
+ 
+  // todo: alos create button element inside the new li element
+  //listOfAllIteam.textContent = emojiPool;
+  emojiPool.forEach(function(emoji){
+    const li = document.createElement("li");
+    li.textContent = emoji
+    emojiList.appendChild(li);
+  })
+
+
 }
 
 function highlightItem(event) {
