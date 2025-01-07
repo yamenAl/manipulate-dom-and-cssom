@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400&display=swap'); /* Playful Google Font */
+
+body {
+  --hue: 0;
+  --saturation: 50%;
+  --lightness: 50%;
+
+  font-family: "Fredoka", sans-serif; /* Playful font */
+  margin: 0;
+  padding: 0;
+  background-color: hsl(var(--hue), var(--saturation), var(--lightness));
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  transition: background-color 0.3s ease;
+}
+
+header {
+  --header-bg-color: #56c596;
+  --header-font-color: white;
+  --header-font-size: 2.5rem;
+
+  background-color: var(--header-bg-color);
+  color: var(--header-font-color);
+  text-align: center;
+  padding: 1.5rem 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: var(--header-font-size);
+  margin: 0;
+  text-shadow: 2px 2px #9bf6a5; 
+}
+
+main {
+  padding: 1rem;
+  text-align: center;
+  flex-grow: 1; 
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+ul.buttons {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  margin: .5rem 0;
+  gap: .5rem;
+  justify-content: flex-start;
+  max-width:100%;
+  scrollbar-width: none;
+}
+
+ul.buttons::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, and Edge */
+}
+
+/* Emoji List Styled as Grid */
+ul.emojis {
+  list-style: none;
+  padding: 0;
+  margin: 1rem auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(3rem, 1fr));
+  gap: 1rem;
+  max-width:400px;
+  width: 100%;
+  justify-content: center;
+}
+
+li {
+  --item-hover-bg-color: #c4e6d7; /* Light pastel green */
+  --item-font-weight-normal: normal;
+  --item-font-weight-bold: bold;
+  --item-font-size: 3rem;
+  --item-cursor: pointer;
+
+  margin: 0;
+  padding: 0 0.8rem;
+  border-radius: 12px;
+  font-size: var(--item-font-size);
+  font-weight: var(--item-font-weight-normal);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+  opacity: 0;
+  animation: fadeIn 0.5s forwards ease-out;
+}
+
+ul.emojis li:hover {
+  background-color: var(--item-hover-bg-color);
+  cursor: var(--item-cursor);
+  transform: rotate(5deg) scale(1.2);
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes pop-out {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+button {
+  --button-bg-color: #7de1aa; 
+  --button-hover-color: #58c18e; 
+
+  padding: 0.8rem 1.2rem;
+  margin: 0.5rem;
+  cursor: pointer;
+  background-color: var(--button-bg-color);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+button:hover {
+  background-color: var(--button-hover-color);
+  transform: scale(1.1);
+}
+
+button:active {
+  background-color: var(--button-bg-color);
+}
+
+footer {
+  --footer-bg-color: #56c596;
+  background-color: var(--footer-bg-color);
+  color: var(--header-font-color);
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 1rem;
+  text-shadow: 1px 1px #9bf6a5; /* Light green shadow for footer */
+  margin-top: auto; /* Sticks footer to the bottom */
+}

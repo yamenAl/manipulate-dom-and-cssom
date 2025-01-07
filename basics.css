@@ -1,0 +1,14 @@
+body {
+  background-color: rgb(179, 20, 219);
+}
+
+p {
+  --opa: .5;
+  position: relative;
+  transition: .25s; /* a interface animation shouldn't take longer then 250 ms */
+  opacity:var(--opa)
+}
+
+p.moveit {
+  translate: 10% 10%;
+}
